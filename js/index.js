@@ -238,35 +238,35 @@ class speedTyping {
 
         if (wpm > 5 && wpm < 20) {
             result = `
-                <div class="modal-icon my-3"><img src="media/sleeping.svg" class="media-object"></div>
+                <div class="modal-icon my-3"><img src="./media/sleeping.svg" class="media-object"></div>
                 <div class="media-body p-2">
                     <h4 class="media-heading">So Slow!</h4>
                     <p class="lead pt-2">${message} You should do more practice!</p>
                 </div>`
         } else if (wpm > 20 && wpm < 40) {
             result = `
-                <div class="modal-icon my-3"><img src="media/thinking.svg" class="media-object"></div>
+                <div class="modal-icon my-3"><img src="./media/thinking.svg" class="media-object"></div>
                 <div class="media-body p-2">
                     <h4 class="media-heading">About Average!</h4>
                     <p class="lead pt-2">${message} You can do better!</p>
                 </div>`
         } else if (wpm > 40 && wpm < 60) {
             result = `
-                <div class="modal-icon my-3"><img src="media/surprised.svg" class="media-object"></div>
+                <div class="modal-icon my-3"><img src="./media/surprised.svg" class="media-object"></div>
                 <div class="media-body p-2">
                     <h4 class="media-heading">Great Job!</h4>
                     <p class="lead pt-2">${message} You're doing great!</p>
                 </div>`
         } else if (wpm > 60) {
             result = `
-                <div class="modal-icon my-3"><img src="media/shocked.svg" class="media-object"></div>
+                <div class="modal-icon my-3"><img src="./media/shocked.svg" class="media-object"></div>
                 <div class="media-body p-2">
                     <h4 class="media-heading">Insane!</h4>
                     <p class="lead pt-2">${message} You're are Awesome!</p>
                 </div>`
         } else {
             result = `
-                <div class="modal-icon my-3"><img src="media/smart.svg" class="media-object"></div>
+                <div class="modal-icon my-3"><img src="./media/smart.svg" class="media-object"></div>
                 <div class="media-body p-2">
                     <h4 class="media-heading">Hmmm!</h4>
                     <p class="lead pt-2">Please stop playing around and start typing!</p>
