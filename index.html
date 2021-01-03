@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="media/favicon.png" type="image/png">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script async src="js/index.js"></script>
+        <title> Touch Typer </title>
+    </head>
+    <body>
+        <section class="mt-4 p-4">
+            <div class="row">
+                <div class="col-sm-6 col-md-2 order-md-0">
+                    <div class="results">
+                        <ul class="list-unstyled right-stats text-center small">
+                            <li class="list-item">Total Words <span id="totalWords" class="d-block stats">0</span></li>
+                            <hr class="hr-x">
+                            <li class="list-item">Written Words <span id="writtenWords" class="d-block stats">0</span></li>
+                            <hr class="hr-x">
+                            <li class="list-item">Errors <span id="errors" class="d-block stats">0</span></li>
+                            <hr class="hr-x">
+                            <li class="list-item">Acuracy <span id="accuracy" class="d-block stats">0</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-2 order-md-2">
+                    <div class="results">
+                        <ul class="list-unstyled left-stats text-center small">
+                            <li class="list-item">Timer <span id="timer" class="d-block stats">0</span></li>
+                            <hr class="hr-x">
+                            <li class="list-item">CPM <span id="cpm" class="d-block stats">0</span></li>
+                            <hr class="hr-x">
+                            <li class="list-item">WPM <span id="wpm" class="d-block stats">0</span></li>
+                            <hr class="hr-x">
+                            <li class="list-item last-result">Last WPM <span id="result" class="d-block stats">0</span></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-8 order-md-1">
+                    <div class="container">
+                        <div class="header text-center mt-4">
+                            <div class="title-container">
+                                <h1 id="title"></h1>
+                            </div>
+                            <h2 id="subtitle">
+                                The speed typing test to improve touch typing.
+                            </h2>
+                            <div class="control">
+                                <button id="btnPlay" class="btn-control">
+                                    <img src="/media/play-button.png" alt="play icon" id="iconPlay" class="control-icon" />
+                                    <span class="d-block x-small pt-1">
+                                        Start
+                                    </span>
+                                </button>
+                                <button id="btnRefresh" class="btn-control">
+                                    <img src="/media/refresh-button.png" alt="refresh icon" id="iconRefresh" class="control-icon" />
+                                    <span class="d-block x-small pt-1">
+                                        Refresh
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- input -->
+                        <div class="bg-dark text-light mono text-input" id="textInput" tabindex="0" disabled></div>
+                        <!-- Original input -->
+                        <div class="bg-dark text-light mono p-4 lead d-none" id="textFull"></div>
+                        <!-- output -->
+                        <div class="mono text-input" id="textOutput"></div>
+
+                        <hr>
+                        <div title="Average typing speed" class="average-container">
+                            <h6 class="py-2">Average typing speed</h6>
+                            <div class="meter-gauge text-light">
+                                <span class="col" style="background: #eb4841">0 - 20 Slow</span>
+                                <span class="col" style="background: #f48847">20 - 40 Average</span>
+                                <span class="col" style="background: #ffc84a">40 - 60 Fast</span>
+                                <span class="col" style="background: #a6c34c">60 - 80 Professional</span>
+                                <span class="col" style="background: #4ec04e">80 - 100+ Top</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success btn-sm modal-repeat-btn" id="modalReload">
+                                    Run again
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm modal-close" id="modalCloseBtn">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sound-control">
+                    <svg enable-background="new 0 0 40 40" id="iconSoundOn" class="control-icon icon-sound-on" version="1.1"
+                        viewBox="0 0 40 40" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <path d="M20,0C9,0,0,9,0,20c0,11,9,20,20,20c11,0,20-9,20-20C40,9,31,0,20,0z M20,38c-9.9,0-18-8.1-18-18c0-9.9,8.1-18,18-18   s18,8.1,18,18C38,29.9,29.9,38,20,38z" />
+                        </g>
+                        <g>
+                            <path d="M31.6,21h-6.3c-0.6,0-1-0.4-1-1s0.4-1,1-1h6.3c0.6,0,1,0.4,1,1S32.1,21,31.6,21z" />
+                        </g>
+                        <g>
+                            <path d="M24,17.1c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l4.6-4.6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-4.6,4.6   C24.5,17,24.3,17.1,24,17.1z" />
+                        </g>
+                        <g>
+                            <path d="M28.6,29.6c-0.3,0-0.5-0.1-0.7-0.3l-4.6-4.6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l4.6,4.6c0.4,0.4,0.4,1,0,1.4   C29.1,29.5,28.8,29.6,28.6,29.6z" />
+                        </g>
+                        <g>
+                            <path d="M17.8,15v-2.3l-4,4.5c-0.2,0.2-0.5,0.3-0.7,0.3H9.7c-0.6,0-1.1,0.5-1.1,1.1v3c0,0.6,0.5,1.1,1.1,1.1H12v-2.4   c0-0.6,0.4-1,1-1c0.5,0,1,0.4,1,1v3l3.8,4.2v-8.5c0-0.5,0.5-1,1-1s1,0.5,1,1v9.1c0,0.9-0.4,1.6-1.1,1.9c-0.2,0.1-0.3,0.1-0.5,0.1   c-0.4,0-0.8-0.2-1.1-0.5l-4.5-5H9.7c-1.7,0-3.1-1.4-3.1-3.1v-3c0-1.7,1.4-3.1,3.1-3.1h2.9l4.5-5c0.4-0.5,1-0.6,1.6-0.4   c0.7,0.3,1.1,1,1.1,1.9v3c0,0.6-0.5,1-1,1S17.8,15.6,17.8,15z" />
+                        </g>
+                    </svg>
+                    <svg enable-background="new 0 0 40 40" id="iconSoundOff" class="control-icon icon-sound-off d-none"
+                        version="1.1" viewBox="0 0 40 40" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <path d="M20,0C9,0,0,9,0,20c0,11,9,20,20,20c11,0,20-9,20-20C40,9,31,0,20,0z M20,38c-9.9,0-18-8.1-18-18c0-9.9,8.1-18,18-18   s18,8.1,18,18C38,29.9,29.9,38,20,38z" />
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M22.6,15v-2.3l-4,4.5c-0.2,0.2-0.5,0.3-0.8,0.3h-3.3c-0.6,0-1.1,0.5-1.1,1.1v3c0,0.6,0.5,1.1,1.1,1.1h2.3v-2.4    c0-0.6,0.5-1,1-1c0.6,0,1,0.4,1,1v3l3.8,4.2v-8.5c0-0.5,0.5-1,1-1s1,0.5,1,1v9.1c0,0.9-0.4,1.6-1.1,1.9c-0.2,0.1-0.3,0.1-0.5,0.1    c-0.4,0-0.8-0.2-1.1-0.5l-4.5-5h-2.9c-1.7,0-3.1-1.4-3.1-3.1v-3c0-1.7,1.4-3.1,3.1-3.1h2.9l4.5-5c0.4-0.5,1-0.6,1.6-0.4    c0.7,0.3,1.1,1,1.1,1.9v3c0,0.6-0.5,1-1,1S22.6,15.6,22.6,15z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <audio id="keyClick" src="media/button.wav" hidden></audio>
+                <audio id="keyBeep" src="media/beep.wav" hidden></audio>
+        </section>
+    </body>
+</html>
