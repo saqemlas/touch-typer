@@ -44,7 +44,7 @@ soundOff.addEventListener('click', e => {
 // Array will hold all quotes that stored in external JSON file
 const allQuotes = [];
 // Fetch that JSON file for data
-fetch('../data/quotes.json')
+fetch('./data/quotes.json')
     .then(response => response.json())
     .then(data => allQuotes.push(...data))
     .catch(error => console.error('Error:', error));
