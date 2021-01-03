@@ -71,9 +71,14 @@ hr {
   animation: flash .3s infinite;
 }
 
+.media-heading {
+  color: black;
+}
+
 .lead {
   font-size: 1.2rem;
   font-weight: 300;
+  color: black;
 }
 
 #textOutput {
