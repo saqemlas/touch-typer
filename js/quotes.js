@@ -1,4 +1,6 @@
-[{
+export default {
+    data: [
+    {
         "quote": "After all, you're only an immortal until someone manages to kill you. After that, you were just long-lived.",
         "author": "Simon R. Green",
         "level": "Easy"
@@ -98,4 +100,4 @@
         "author": "Neil Gaiman",
         "level": "Medium"
     }
-]
+]};

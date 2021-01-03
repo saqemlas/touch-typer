@@ -1,3 +1,5 @@
+import quotes from './quotes.js';
+
 // Shorthand for querySelectors
 const select    = e => document.querySelector(e);
 const selectAll = e => document.querySelectorAll(e);
@@ -42,12 +44,7 @@ soundOff.addEventListener('click', e => {
 })
 
 // Array will hold all quotes that stored in external JSON file
-const allQuotes = [];
-// Fetch that JSON file for data
-fetch('./data/quotes.json')
-    .then(response => response.json())
-    .then(data => allQuotes.push(...data))
-    .catch(error => console.error('Error:', error));
+const allQuotes = quotes.data;
 
 // Function to return random key from an array
 const random = array => array[Math.floor(Math.random() * array.length)];
