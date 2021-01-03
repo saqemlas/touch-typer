@@ -2,4 +2,4 @@
 
 Speed Typing Test
 
-<!-- #### [Try Here](https://saqemlas.github.io/touch-typer/) -->
+#### [Try Here](https://saqemlas.io/touch-typer/)
